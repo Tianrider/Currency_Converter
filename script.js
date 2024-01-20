@@ -43,8 +43,6 @@ button.addEventListener("click", e => {
     } else {
         getExchangeRate(amount, selectedBaseCurrency, selectedTargetCurrency);
     }
-
-    resultText.innerText = amount + " " + selectedBaseCurrency + " = " + result + " " + selectedTargetCurrency;
 });
 
 function getExchangeRate(amount, selectedBaseCurrency, selectedTargetCurrency) {
@@ -52,6 +50,6 @@ function getExchangeRate(amount, selectedBaseCurrency, selectedTargetCurrency) {
     fetch(url).then(response => response.json()).then(data => {
         let exchangeRate = data.rates[selectedTargetCurrency];
         let exchangeResult = (amount * exchangeRate).toFixed(2);
+        resultText.innerText = amount + " " + selectedBaseCurrency + " = " + exchangeResult + " " + selectedTargetCurrency;
     })
-    return exchangeResult;
 }

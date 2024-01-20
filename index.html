@@ -10,55 +10,59 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./style.css"/>
   </head>
   <body>
-    <form class="row row-cols-lg-3 g-3 align-items-center position-absolute top-50 start-50 translate-middle text-center">
-        <div class="col-12">
-          <label class="visually-hidden" 
-          For="amount_one">
-            Amount
-          </label>
-          <div class="input-group">
+    <div class="slider-thumb container-fluid"></div>
+    <div class="title-container position-absolute text-center fixed-top pt-3 mt-5">
+      <h1 class="title">
+        CuConTor
+      </h1>
+      <p class="text-light">Currrency Converter</p>
+    </div>
+
+    <form class="row g-4 align-items-center position-absolute start-50 translate-middle text-center form">
+        <div class="container-fluid input-container">
             <input
               type="text"
               class="form-control"
               id="amount_one"
               placeholder="Amount"
             ></input>
+        </div>
+  
+        <div class="row text-center d-flex justify-content-center select-container">
+          <div class="col-2 d-flex justify-content-center">
+            <select class="form-select-one form-select">
+              <option value="IDR">IDR</option>
+              <option value="USD" selected>USD</option>
+              <option value="JPY">JPY</option>
+              <option value="BTC">BTC</option>
+            </select>
+          </div>
+
+          <div class="col-1 d-flex justify-content-center align-content-center">
+            <img class="arrow-img" src=
+            "https://www.freeiconspng.com/thumbs/white-arrow-png/white-arrow-transparent-png-22.png"
+            >
+          </div>
+
+          <div class="col-2 d-flex justify-content-center">
+            <select class="form-select-two form-select">                                         
+              <option value="IDR" selected>IDR</option>
+              <option value="USD">USD</option>
+              <option value="JPY">JPY</option>
+              <option value="BTC">BTC</option>
+            </select>
           </div>
         </div>
-  
-        <div class="col-12">
-          <label class="visually-hidden" 
-          For="inlineFormSelectPref">
-            Preference
-          </label>
-          <select class="form-select-one">
-            <option value="IDR">IDR</option>
-            <option value="USD" selected>USD</option>
-            <option value="JPT">JPY</option>
-            <option value="BTC">BTC</option>
-          </select>
-        </div>
-  
-        <div class="col-12">
-          <label class="visually-hidden">
-            Preference
-          </label>
-          <select class="form-select-two">
-            <option value="IDR" selected>IDR</option>
-            <option value="USD">USD</option>
-            <option value="JPY">JPY</option>
-            <option value="BTC">BTC</option>
-          </select>
+
+        <div class="result-text-container">
+          <h6 class="result-text">Waiting for you....</h6>
         </div>
 
         <div class="col-12 submit-button">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-
-        <div>
-            <h6 class="result-text"></h6>
+            <button type="submit" class="btn">Convert!</button>
         </div>
       </form>
     <script
